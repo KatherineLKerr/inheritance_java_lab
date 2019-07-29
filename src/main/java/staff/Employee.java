@@ -25,10 +25,18 @@ public class Employee {
     }
 
     public void raiseSalary(double amount) {
-        this.salary += amount;
+        if (amount >= 0.0) {
+            this.salary += amount;
+        }
     }
 
     public double payBonus() {
-        return this.salary / 100;
+        return getSalary() / 100;
+    }
+
+    public void setName(String name) {
+        if (!name.equals(null)) {
+            this.name = name;
+        }
     }
 }

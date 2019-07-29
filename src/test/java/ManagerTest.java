@@ -28,4 +28,10 @@ public class ManagerTest {
     public void canGetDepartmentName() {
         assertEquals("whatever", manager.getDeptName());
     }
+
+    @Test
+    public void cantRaiseSalaryWhenLessThanZero() {
+        manager.raiseSalary(-100.00);
+        assertEquals(30000.00, manager.getSalary(), 0.01);
+    }
 }
